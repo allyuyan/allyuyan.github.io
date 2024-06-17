@@ -1,0 +1,83 @@
+/* Basic styles for the game layout. Flexbox is used to center the game container vertically and horizontally. */
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif;
+}
+
+.start-screen,
+.end-screen,
+.game-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.game-container {
+  /* Grid layout to organize the holes in a 3x3 format. Each hole is styled to look like a circular area where the moles can appear. */
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.hole {
+  width: 100px;
+  height: 100px;
+  background-color: #8b4513; /* Brown color to represent dirt */
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden; /* Ensures the mole and hammer images stay within the hole */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.mole {
+  /* Set the mole image size to fill the hole */
+  max-width: 100%;
+  max-height: 100%;
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hammer {
+  /* Set the hammer image size to fit within the hole */
+  max-width: 60%;
+  max-height: 60%;
+  display: none; /* Initially hidden */
+  position: absolute;
+  top: 20%;
+  left: 20%;
+}
+
+.mole:hover + .hammer {
+  display: block; /* Show the hammer when hovering over the mole */
+}
+
+.mole:active {
+  transform: scale(0.9); /* Slightly shrink the mole when clicked */
+}
+
+.score-board,
+.timer {
+  /* Simple styles for the score and timer display. Positioned above the game grid for easy visibility. */
+  margin: 20px;
+}
