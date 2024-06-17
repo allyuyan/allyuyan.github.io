@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Whack-a-Mole Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="start-screen" id="startScreen">
+      <h1>Whack-a-Mole Game</h1>
+      <button onclick="startGame()">Start Game</button>
+    </div>
+    <div class="game-screen" id="gameScreen" style="display: none">
+      <div class="score-board">Score: <span id="score">0</span></div>
+      <div class="timer">Time: <span id="time">30</span>s</div>
+      <div class="game-container">
+        <!-- Creating nine holes for the moles to appear. Each hole has a hidden mole inside it. -->
+        <div class="hole" id="hole1">
+          <img class="mole" id="mole1" src="mole.png" alt="mole" />
+          <img class="hammer" id="hammer1" src="hammer.png" alt="hammer" />
+        </div>
+        <div class="hole" id="hole2">
+          <img class="mole" id="mole2" src="mole.png" alt="mole" />
+          <img class="hammer" id="hammer2" src="hammer.png" alt="hammer" />
+        </div>
+        <div class="hole" id="hole3">
+          <img class="mole" id="mole3" src="mole.png" alt="mole" />
+          <img class="hammer" id="hammer3" src="hammer.png" alt="hammer" />
+        </div>
+        <div class="hole" id="hole4">
+          <img class="mole" id="mole4" src="mole.png" alt="mole" />
+          <img class="hammer" id="hammer4" src="hammer.png" alt="hammer" />
+        </div>
+        <div class="hole" id="hole5">
+          <img class="mole" id="mole5" src="mole.png" alt="mole" />
+          <img class="hammer" id="hammer5" src="hammer.png" alt="hammer" />
+        </div>
+        <div class="hole" id="hole6">
+          <img class="mole" id="mole6" src="mole.png" alt="mole" />
+          <img class="hammer" id="hammer6" src="hammer.png" alt="hammer" />
+        </div>
+        <div class="hole" id="hole7">
+          <img class="mole" id="mole7" src="mole.png" alt="mole" />
+          <img class="hammer" id="hammer7" src="hammer.png" alt="hammer" />
+        </div>
+        <div class="hole" id="hole8">
+          <img class="mole" id="mole8" src="mole.png" alt="mole" />
+          <img class="hammer" id="hammer8" src="hammer.png" alt="hammer" />
+        </div>
+        <div class="hole" id="hole9">
+          <img class="mole" id="mole9" src="mole.png" alt="mole" />
+          <img class="hammer" id="hammer9" src="hammer.png" alt="hammer" />
+        </div>
+      </div>
+    </div>
+    <div class="end-screen" id="endScreen" style="display: none">
+      <h1>Game Over</h1>
+      <p>Your final score is: <span id="finalScore">0</span></p>
+      <button onclick="resetGame()">Play Again</button>
+    </div>
+    <audio id="hitSound" src="hit-sound.wav"></audio>
+    <script src="script.js"></script>
+  </body>
+</html>
